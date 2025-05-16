@@ -69,11 +69,39 @@ $ sudo shutdown -h now
 $ csrutil enable
 $ reboot
 ```
+
+### Install Python Dependencies Safely
+Because macOS’s Python environment is externally managed (e.g., by Homebrew), direct system-wide pip installs are disabled to protect your system. To safely install the homekit[IP] package, use a Python virtual environment:
+
+> **Important:** The `homekit[IP]` package depends on the `ed25519` library, which currently is incompatible with Python 3.13 due to deprecated API usage. Attempting to install on Python 3.13 results in build errors.
+
+To avoid this, use Python 3.11 or 3.10 to create your virtual environment:
+
+```bash
+# Install Python 3.11.8 if you haven't already
+pyenv install 3.11.8
+
+# Set the local Python version for this project directory
+pyenv local 3.11.8
+
+# Create a new virtual environment with the selected Python version
+python -m venv venv
+
+# Activate the new virtual environment
+source venv/bin/activate
+
+# Confirm the Python version in the virtual environment
+python3 -V  # Should output Python 3.11.8
+
+# Install dependencies
+python3 -m pip install --upgrade pip
+python3 -m pip install "homekit[IP]"
+```
+
 ### Discover HomeKit Devices on Network
 
 * Run device discovery.
 ```bash
-$ python3 -m pip install "homekit[IP]"
 $ python3 -m homekit.discover
 ```
 * Note down the Device ID values and find the correlation between the Device IDs in the discovery output and the Paired HomeKit Accessory Account values in [`dump/dump.txt`](dump/dump.txt).
