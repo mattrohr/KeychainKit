@@ -156,7 +156,7 @@ $ python3 -m homekit.discover
     "iOSDeviceLTSK": "<iOSDeviceLTSK>",
     "iOSDeviceLTPK": "<iOSDeviceLTPK>",
     "AccessoryIP": "<IPv4Address>",
-    "AccessoryPort": 55523,
+    "AccessoryPort": <Port>,
     "Connection": "IP"
   },
   <...>
