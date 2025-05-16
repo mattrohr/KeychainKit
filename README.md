@@ -231,3 +231,5 @@ $ openssl rand -hex 16
 $ python3 -m json.tool dump/core.config_entries
 ```
   * Only if the JSON validation was successful, overwrite the `.storage/core.config_entries` file in your Home Assistant instance's configuration directory with your modified [`dump/core.config_entries`](dump/core.config_entries) file and start your Home Assistant instance.
+  
+* To troubleshoot, check [`config/home-assistant.log`](config/home-assistant.log).
