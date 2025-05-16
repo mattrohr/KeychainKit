@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mattrohr/assets/main/KeychainKit/screenshot.png" alt="Final screenshot showing KeychainKit completion" style="max-width: 100%; height: auto;">
+  <br><em>Figure 1: Screenshot showing successful completion of KeychainKit steps</em>
+</p>
+
+
 ## Preamble
 
 This repository along with the instructions in this README can be used to extract HomeKit Pairing Identity Keys along with Paired HomeKit Accessory Keys from macOS. These keys can be used in order to interact with your already paired HomeKit devices through third-party software, such as the [Home Assistant HomeKit Device Integration](https://www.home-assistant.io/integrations/homekit_controller/), without needing to reset the device. This is especially useful when trying to have Home Assistant interface with Apple HomePods, as they can not be paired using the officially supported approach.
