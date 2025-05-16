@@ -184,7 +184,7 @@ $ python3 -m homekit.get_accessories -f dump/pairing.json -a <DeviceName>
 * For each device, add an entry to [`dump/core.config_entries`](dump/core.config_entries) following the data structure below.
   * Replace all placeholders wrapped in angle brackets with their respective values.
   * `<AccessoryPairingID | lower>` represents the lower-case equivalent of the `<AccessoryPairingID>` value.
-  * The following example is specific to Apple HomePods using an `AccessoryPort` value of `55523`. Your device may use a different `AccessoryPort` such as `8080`.
+  * Replace <IPv4Address> and <Port> with the actual IP address and port number of your accessory, which you can find in the output of python3 -m homekit.discover. For example, Apple HomePods typically use port 55523, HomePod minis use 55313, and other devices might use ports like 8080.
 ```json
 {
     "entry_id": "<Random128BitHexString>",
@@ -198,7 +198,7 @@ $ python3 -m homekit.get_accessories -f dump/pairing.json -a <DeviceName>
         "iOSDeviceLTSK": "<iOSDeviceLTSK>",
         "iOSDeviceLTPK": "<iOSDeviceLTPK>",
         "AccessoryIP": "<IPv4Address>",
-        "AccessoryPort": 55523,
+        "AccessoryPort": <Port>,
         "Connection": "IP"
     },
     "options": {},
