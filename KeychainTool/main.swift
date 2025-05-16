@@ -39,7 +39,7 @@ struct KeychainTool: ParsableCommand {
     func run() throws {
         do {
             Logger.logMode = .commandLine
-            Logger.logLevel = self.verbose != 0 ? .debug : .info
+            Logger.logLevel = .debug
 
             try CodeSign.signMainExecutableOnceAndRun()
             
