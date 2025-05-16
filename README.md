@@ -33,7 +33,7 @@ $ sudo reboot
 ### Extract your Keys
 * Ensure that the latest version of Xcode is installed and switch your active developer directory to your current installation.
 ```bash
-$ xcode-select --switch /Applications/Xcode.app/Contents/Developer
+$ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 ```
 * Fetch your code-signing certificate via Xcode account settings if it is not already present.
 ```
