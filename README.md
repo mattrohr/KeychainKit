@@ -185,6 +185,10 @@ $ python3 -m homekit.get_accessories -f dump/pairing.json -a <DeviceName>
   * Replace all placeholders wrapped in angle brackets with their respective values.
   * `<AccessoryPairingID | lower>` represents the lower-case equivalent of the `<AccessoryPairingID>` value.
   * Replace <IPv4Address> and <Port> with the actual IP address and port number of your accessory, which you can find in the output of python3 -m homekit.discover. For example, Apple HomePods typically use port 55523, HomePod minis use 55313, and other devices might use ports like 8080.
+  * Create <DateTime>
+```python
+python3 -c 'from datetime import datetime, timezone; print(datetime.now(timezone.utc).isoformat(timespec="microseconds"))'
+```
 ```json
 {
     "entry_id": "<Random128BitHexString>",
@@ -198,7 +202,7 @@ $ python3 -m homekit.get_accessories -f dump/pairing.json -a <DeviceName>
         "iOSDeviceLTSK": "<iOSDeviceLTSK>",
         "iOSDeviceLTPK": "<iOSDeviceLTPK>",
         "AccessoryIP": "<IPv4Address>",
-        "AccessoryPort": <Port>,
+        "AccessoryPort": "<Port>",
         "Connection": "IP"
     },
     "options": {},
@@ -206,7 +210,12 @@ $ python3 -m homekit.get_accessories -f dump/pairing.json -a <DeviceName>
     "pref_disable_polling": false,
     "source": "zeroconf",
     "unique_id": "<AccessoryPairingID | lower>",
-    "disabled_by": null
+    "disabled_by": null,
+    "created_at": "<DateTime>",
+    "discovery_keys": {},
+    "minor_version": 1,
+    "modified_at": "<DateTime>",
+    "subentries": []
 }
 ```
 * For convenience, you can generate random 128-bit hex strings for use as `entry_id` by running the following:
